@@ -3,6 +3,7 @@ import { BiCart } from "react-icons/bi";
 import { PiMapPin } from "react-icons/pi";
 import classes from "./header.module.css"
 import LowerHeader from "./LowerHeader";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -33,7 +34,7 @@ const Header = () => {
             <select name="" id="">
               <option value="">All</option>
             </select>
-            <input type="text"/>
+            <input type="text" />
             <BsSearch size={25} />
           </div>
           {/* right side */}
@@ -49,21 +50,21 @@ const Header = () => {
               </select>
             </a>
 
-            <a href="">
+            <Link to="/Auth">
               <p>Sign In</p>
               <span>Account & Lists</span>
-            </a>
-            <a href="">
+            </Link >
+            <Link to="/Order">
               <p>returns</p>
               <span>& Orders</span>
-            </a>
-            <a href="" className={classes.Cart}>
+            </Link>
+            <Link to="/Cart" className={classes.Cart}>
               <BiCart size={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
-        <LowerHeader/>
+        <LowerHeader />
       </section>
     </>
   );

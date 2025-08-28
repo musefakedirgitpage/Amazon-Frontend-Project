@@ -1,11 +1,12 @@
 import './App.css'
-import Home from './Components/Home/Home'
+import Routing from './Routing'
+
 
 function App() {
   
   return (
     <>
-      <Home/>
+      <Routing/>
     </>
   )
 }
