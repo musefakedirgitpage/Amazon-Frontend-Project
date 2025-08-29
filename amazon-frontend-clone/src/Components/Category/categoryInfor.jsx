@@ -1,20 +1,19 @@
 export const categoryinfo = [
   {
-    title:
-      "Electronics",
-    name: "Electronics",
+    title: "Electronics",
+    name: "electronics",
     imageURL:
       "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546583/fakestore-api-products/81QpkIctqPL._AC_SX679__slc3yx.jpg",
   },
   {
-    title: "Rain Jacket Women Windbreaker",
-    name: "Rain Jacket Women Windbreaker ",
+    title: "WomensClothing",
+    name: "women's clothing",
     imageURL:
       "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546682/fakestore-api-products/71HblAHs5xL._AC_UY879_-2_ywnhy1.jpg",
   },
   {
-    title: "Mens Casual Slim Fit",
-    name: "Mens Casual Slim Fit",
+    title: "Men's Clothing",
+    name: "men's clothing",
     imageURL:
       "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546290/fakestore-api-products/71YXzeOuslL._AC_UY879__kavy9l.jpg",
   },
@@ -22,7 +21,6 @@ export const categoryinfo = [
     title: "Jewelery ",
     name: "jewelery ",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546397/fakestore-api-products/71YAIFU48IL._AC_UL640_QL65_ML3__itqs50.jpg",
-    // "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546373/fakestore-api-products/61sbMiUnoGL._AC_UL640_QL65_ML3__lp7cp6.jpg",
+      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546397/fakestore-api-products/71YAIFU48IL._AC_UL640_QL65_ML3__itqs50.jpg",  
   },
 ];

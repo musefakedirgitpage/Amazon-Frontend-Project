@@ -1,13 +1,14 @@
 import Rating from "@mui/material/Rating"
 import CurrencyFormater from "../CurencyFormater/CurrencyFormater";
 import classes from "./product.module.css"
-const ProductCard = ({data}) => {
-    const { imageURL, title, price, rating, ratingCount } = data;
+import { Link } from "react-router-dom";
+const ProductCard = ({product}) => {
+    const { imageURL,id, title, price, rating, ratingCount } = product;
   return (
     <div className={`${classes.card__container}`}>
-      <a href="">
+      <Link to={`/products/${id}`}>
         <img src={imageURL} alt="" />
-      </a>
+      </Link>
       <div>
         <h3>{title}</h3>
         <div className={classes.rating}>

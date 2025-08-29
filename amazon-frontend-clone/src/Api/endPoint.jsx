@@ -1,0 +1,1 @@
+export const productUrl = "https://fakestores.onrender.com";

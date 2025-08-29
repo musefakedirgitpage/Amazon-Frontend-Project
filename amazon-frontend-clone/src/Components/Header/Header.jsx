@@ -12,12 +12,12 @@ const Header = () => {
       <section>
         <div className={classes.header__container}>
           <div className={classes.logo__container}>
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/small/amazon_PNG11.png"
                 alt=""
               />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               <span>
                 <PiMapPin />
@@ -40,7 +40,7 @@ const Header = () => {
           {/* right side */}
 
           <div className={classes.order__container}>
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1024px-Flag_of_the_Unites_States.svg.jpg"
                 alt="American Flag"
@@ -48,12 +48,12 @@ const Header = () => {
               <select name="" id="">
                 <option value="">En</option>
               </select>
-            </a>
+            </Link>
 
             <Link to="/Auth">
               <p>Sign In</p>
               <span>Account & Lists</span>
-            </Link >
+            </Link>
             <Link to="/Order">
               <p>returns</p>
               <span>& Orders</span>
