@@ -4,9 +4,12 @@ import { PiMapPin } from "react-icons/pi";
 import classes from "./header.module.css"
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider/Dataprovider";
+import { useContext } from "react";
 
 
 const Header = () => {
+  const [{basket}, dispatch] = useContext(DataContext);
   return (
     <>
       <section>
@@ -60,7 +63,7 @@ const Header = () => {
             </Link>
             <Link to="/Cart" className={classes.Cart}>
               <BiCart size={35} />
-              <span>0</span>
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>
