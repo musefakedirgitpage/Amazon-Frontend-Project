@@ -11,7 +11,7 @@ import { useContext } from "react";
 const Header = () => {
   const [{basket}, dispatch] = useContext(DataContext);
   return (
-    <>
+    <section className={classes.fixed}>
       <section>
         <div className={classes.header__container}>
           <div className={classes.logo__container}>
@@ -69,7 +69,7 @@ const Header = () => {
         </div>
         <LowerHeader />
       </section>
-    </>
+    </section>
   );
 };
 

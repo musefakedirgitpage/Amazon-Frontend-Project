@@ -35,7 +35,7 @@ useEffect(() => {
           <hr />
           <div className={classes.products__container}>
             {results.map((product, i) => {
-              return <ProductCard key={i} product={product} />;
+              return <ProductCard key={i} product={product} renderAdd={true} />;
             })}
           </div>
         </section>
