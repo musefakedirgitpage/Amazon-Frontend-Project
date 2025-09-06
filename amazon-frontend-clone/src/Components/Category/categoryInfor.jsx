@@ -3,24 +3,24 @@ export const categoryinfo = [
     title: "Electronics",
     name: "electronics",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546583/fakestore-api-products/81QpkIctqPL._AC_SX679__slc3yx.jpg",
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Dashboard/Fuji_Dash_TV_2X._SY304_CB432517900_.jpg",
   },
   {
     title: "WomensClothing",
     name: "women's clothing",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546682/fakestore-api-products/71HblAHs5xL._AC_UY879_-2_ywnhy1.jpg",
+      "https://images-na.ssl-images-amazon.com/images/G/01/softlines/shopbop/ingress/2023/March/mp_20230219_ff_desktopsinglecategory_desktop_379x304_1._SY304_CB612639047_.jpg",
   },
   {
     title: "Men's Clothing",
     name: "men's clothing",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546290/fakestore-api-products/71YXzeOuslL._AC_UY879__kavy9l.jpg",
+      "https://m.media-amazon.com/images/I/618bcm65ksL._AC_UL480_FMwebp_QL65_.jpg",
   },
   {
     title: "Jewelery ",
     name: "jewelery ",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546397/fakestore-api-products/71YAIFU48IL._AC_UL640_QL65_ML3__itqs50.jpg",  
+      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546397/fakestore-api-products/71YAIFU48IL._AC_UL640_QL65_ML3__itqs50.jpg",
   },
 ];

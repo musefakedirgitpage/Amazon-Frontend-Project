@@ -6,10 +6,11 @@ import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/Dataprovider";
 import { useContext } from "react";
+import {auth} from "../../Utility/firbas"
 
 
 const Header = () => {
-  const [{basket}, dispatch] = useContext(DataContext);
+  const [{basket, user}, dispatch] = useContext(DataContext);
   const totalItem=basket?.reduce((amount,item)=>{return item.amount+amount},0)
   return (
     <section className={classes.fixed}>
@@ -39,7 +40,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" />
-            <BsSearch size={25} />
+            <BsSearch size={39} />
           </div>
           {/* right side */}
 
@@ -54,9 +55,20 @@ const Header = () => {
               </select>
             </Link>
 
-            <Link to="/Auth">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/Auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]}</p>
+                    <span onClick={()=>auth.signOut()}>Sign Out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello, Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             <Link to="/Order">
               <p>returns</p>

@@ -4,7 +4,7 @@ import classes from "./product.module.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../DataProvider/Dataprovider";
-import { Type } from "../../Utility/action.type";
+import { Type } from "../../Utility/reducer";
 const ProductCard = ({ product, flex, renderDescription, renderAdd }) => {
   const { imageURL, id, title, price, rating, ratingCount, description } =
     product;

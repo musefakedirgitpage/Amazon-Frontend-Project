@@ -40,13 +40,14 @@ height: 70px;
 font-size: 10px;
 }
 .search{
+   
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    flex: 1 1 0%;
     border-radius: 10px;
     overflow: hidden;
-    width: 100%;
-    flex: 1;
 }
 .search select,.search input 
 {
@@ -57,6 +58,7 @@ outline: 1px solid white;
 
 .search select{
     border: 1px solid white;
+   
 }
 .search input{
    border: 1px solid white; 
@@ -67,6 +69,7 @@ outline: 1px solid white;
    padding: 7px; 
    background:#febd69;
    color: #1a1a1a;
+   
 
 }
 .search svg:hover{

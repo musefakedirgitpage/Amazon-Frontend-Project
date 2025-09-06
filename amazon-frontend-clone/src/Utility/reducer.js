@@ -1,7 +1,12 @@
-import { Type } from "./action.type";
+export const Type = {
+  ADD_TO_BASKET: "ADD_TO_BASKET",
+  REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
+  SET_USER:"SET_USER",
+};
 
 export const intialState = {
   basket: [],
+  uesr:null
 };
 
 export const reducer = (state = intialState, action) => {
@@ -29,21 +34,29 @@ export const reducer = (state = intialState, action) => {
           basket: updatedBasket,
         };
       }
-      case Type.REMOVE_FROM_BASKET:
-        const index=state.basket.findIndex(item=>item.id===action.id)
-        let newBasket=[...state.basket]
-        if(index>=0){
-if(newBasket[index].amount>1){
-  newBasket[index]={...newBasket[index],amount:newBasket[index].amount-1}
-}
-else{
-  newBasket.splice(index,1)
-}
+    case Type.REMOVE_FROM_BASKET:
+      const index = state.basket.findIndex((item) => item.id === action.id);
+      let newBasket = [...state.basket];
+      if (index >= 0) {
+        if (newBasket[index].amount > 1) {
+          newBasket[index] = {
+            ...newBasket[index],
+            amount: newBasket[index].amount - 1,
+          };
+        } else {
+          newBasket.splice(index, 1);
         }
-        return{
-          ...state,basket:newBasket
-        }
-default:
+      }
+      return {
+        ...state,
+        basket: newBasket,
+      };
+      case Type.SET_USER:
+      return {
+        ...state,
+        user: action.user
+      }
+    default:
       return state;
   }
 };

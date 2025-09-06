@@ -5,16 +5,16 @@ import{useContext} from 'react'
 import ProductCard from '../../Components/Product/ProductCard'
 import CurrencyFormater from '../../Components/CurencyFormater/CurrencyFormater'
 import { Link } from 'react-router-dom'
-import { Type } from '../../Utility/action.type'
+import { Type } from '../../Utility/reducer'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-
-
 const Cart = () => {
   const [{basket,user},dispatch]=useContext(DataContext)
   const total=basket.reduce((amount,item)=>{
     return item.price * item.amount+amount
   },0)
+  
+ console.log('musefa')
   const increament=(item)=>{
     dispatch({
       type:Type.ADD_TO_BASKET,

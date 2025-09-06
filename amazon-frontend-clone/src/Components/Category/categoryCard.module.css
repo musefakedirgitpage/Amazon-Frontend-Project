@@ -31,3 +31,9 @@ margin: 15px;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
  }
+ @media screen and (max-width:768px){
+    .category__container{
+        display: flex;
+        flex-direction: column;
+    }
+}

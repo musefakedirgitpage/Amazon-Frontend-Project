@@ -25,16 +25,18 @@ useEffect(() => {
 }, [productId]);
   return (
     <LayOut>
-      {isLoding ? (
-        <Loder />
-      ) : (
-        <ProductCard
-          product={product}
-          flex={true}
-          renderDescription={true}
-          renderAdd={true}
-        />
-      )}
+     
+        {isLoding ? (
+          <Loder />
+        ) : (
+          <ProductCard
+            product={product}
+            flex={true}
+            renderDescription={true}
+            renderAdd={true}
+          />
+        )}
+     
     </LayOut>
   );
 }

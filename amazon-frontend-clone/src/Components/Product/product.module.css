@@ -74,7 +74,7 @@ padding: 10px opx;
   height:auto ; 
 
 }
-@media screen and(max-width:768px){
+@media screen and (max-width:768px){
     .product__flexed{
         display: flex;
         flex-direction: column;

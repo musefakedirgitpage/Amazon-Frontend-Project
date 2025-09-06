@@ -10,8 +10,7 @@ const CarouselEffect = () => {
         autoPlay={true}
         infiniteLoop={true}
         showIndicators={false}
-        showThumbs={false}
-      >
+        showThumbs={false}>
         {img.map((imagelink) => {
           return <img src={imagelink} />;
         })}
