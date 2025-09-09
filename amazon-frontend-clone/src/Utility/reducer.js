@@ -2,6 +2,7 @@ export const Type = {
   ADD_TO_BASKET: "ADD_TO_BASKET",
   REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
   SET_USER:"SET_USER",
+  EMPTY_BASKET:"EMPTY_BASKET"
 };
 
 export const intialState = {
@@ -51,6 +52,11 @@ export const reducer = (state = intialState, action) => {
         ...state,
         basket: newBasket,
       };
+      case Type.EMPTY_BASKET:
+        return{
+          ...state,
+          basket:[]
+        }
       case Type.SET_USER:
       return {
         ...state,

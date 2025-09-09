@@ -14,7 +14,6 @@ const Cart = () => {
     return item.price * item.amount+amount
   },0)
   
- console.log('musefa')
   const increament=(item)=>{
     dispatch({
       type:Type.ADD_TO_BASKET,

@@ -5,6 +5,7 @@ import { auth } from './Utility/firbas'
 import { useContext, useEffect } from 'react'
 import { DataContext } from './Components/DataProvider/Dataprovider'
 
+
 function App() {
   const[{user},dispatch]=useContext(DataContext)
   useEffect(()=>{

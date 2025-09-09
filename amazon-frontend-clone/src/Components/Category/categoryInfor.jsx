@@ -21,6 +21,6 @@ export const categoryinfo = [
     title: "Jewelery ",
     name: "jewelery ",
     imageURL:
-      "https://res.cloudinary.com/dlnbezqzd/image/upload/v1673546397/fakestore-api-products/71YAIFU48IL._AC_UL640_QL65_ML3__itqs50.jpg",
+      "https://m.media-amazon.com/images/I/71r7eWuCsaL._AC_UL480_FMwebp_QL65_.jpg",
   },
 ];

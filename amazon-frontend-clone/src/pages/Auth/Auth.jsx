@@ -1,12 +1,14 @@
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import classes from "./Auth.module.css";
 import { auth } from "../../Utility/firbas/";
-import {useContext, useState} from "react";
-import {signInWithEmailAndPassword,createUserWithEmailAndPassword} from "firebase/auth"
+import { useContext, useState } from "react";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { DataContext } from "../../Components/DataProvider/Dataprovider";
 import { Type } from "../../Utility/reducer";
 import { SpinnerCircular } from "spinners-react";
-
 
 const Auth = () => {
   const [email, setemail] = useState("");
@@ -14,39 +16,44 @@ const Auth = () => {
   const [error, setError] = useState("");
   const [loading, setLoding] = useState({ signIn: false, signUp: false });
   const [{ user }, dispatch] = useContext(DataContext);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+  const navStateData = useLocation();
   // console.log(user)
-  const authHandler=(e)=>{
-    e.preventDefault()
-    if(e.target.name=="signin"){
+  const authHandler = (e) => {
+    e.preventDefault();
+    if (e.target.name == "signin") {
       setLoding({ ...loading, signIn: true });
-      signInWithEmailAndPassword(auth,email,password).then((userInfo)=>{
-        dispatch({
-          type: Type.SET_USER,
-          user:userInfo.user,
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userInfo) => {
+          dispatch({
+            type: Type.SET_USER,
+            user: userInfo.user,
+          });
+          setLoding({ ...loading, signIn: false });
+          navigate(navStateData?.state?.redirect || "/");
         })
-        setLoding({ ...loading, signIn: false });
-        navigate("/")
-      }).catch((err)=>{
-        setError(err.message);
-        setLoding({ ...loading, signIn: false });
-      })
-    }else{
+        .catch((err) => {
+          setError(err.message);
+          setLoding({ ...loading, signIn: false });
+        });
+    } else {
       setLoding({ ...loading, signUp: true });
-      createUserWithEmailAndPassword(auth,email,password).then((userInfo)=>{
-       dispatch({
-         type: Type.SET_USER,
-         user: userInfo.user,
-       });
-       setLoding({ ...loading, signUp: false });
-       navigate("/");
-      }).catch((err)=>{
-        setError(err.message)
-        setLoding({ ...loading, signUp: false });
-      })
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userInfo) => {
+          dispatch({
+            type: Type.SET_USER,
+            user: userInfo.user,
+          });
+          setLoding({ ...loading, signUp: false });
+          navigate(navStateData?.state?.redirect || "/");
+        })
+        .catch((err) => {
+          setError(err.message);
+          setLoding({ ...loading, signUp: false });
+        });
     }
-  }
-  
+  };
+
   return (
     <section className={classes.login}>
       <Link to="/">
@@ -54,6 +61,18 @@ const Auth = () => {
       </Link>
       <div className={classes.login__container}>
         <h1>Sign In</h1>
+        {navStateData?.state?.msg && (
+          <small
+            style={{
+              padding: "5px",
+              textAlign: "center",
+              color: "red",
+              fontWeight: "bold",
+            }}
+          >
+            {navStateData?.state?.msg}
+          </small>
+        )}
         <form action="">
           <div>
             <label htmlFor="email">Email</label>
@@ -79,7 +98,11 @@ const Auth = () => {
             onClick={authHandler}
             className={classes.login__sinInbutton}
           >
-            {loading.signIn ? (<SpinnerCircular color="#000" size={20} />) : ("Sign In")}
+            {loading.signIn ? (
+              <SpinnerCircular color="#000" size={20} />
+            ) : (
+              "Sign In"
+            )}
           </button>
         </form>
         <p>

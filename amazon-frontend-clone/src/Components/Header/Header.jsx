@@ -60,7 +60,7 @@ const Header = () => {
                 {user ? (
                   <>
                     <p>Hello {user?.email?.split("@")[0]}</p>
-                    <span onClick={()=>auth.signOut()}>Sign Out</span>
+                    <span onClick={() => auth.signOut()}>Sign Out</span>
                   </>
                 ) : (
                   <>
@@ -70,7 +70,7 @@ const Header = () => {
                 )}
               </div>
             </Link>
-            <Link to="/Order">
+            <Link to="/orders">
               <p>returns</p>
               <span>& Orders</span>
             </Link>
